@@ -13,7 +13,9 @@ function Index({ flights }) {
           <div key={flight._id}>
             <h2>{flight.airline}</h2>
             <p>Flight Number: {flight.flightNo}</p>
-            <p>Departing Date: {flight.departs?.toString().slice(0, 16)}</p>
+            {flight.departs ? (
+              <p>Departing Date: {flight.departs.toString().slice(0, 16)}</p>
+            ) : <p>Departing Date not specified</p>}
             <hr />
           </div>
         );

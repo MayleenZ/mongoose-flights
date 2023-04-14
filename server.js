@@ -28,6 +28,8 @@ app.get("/createflight", (req, res) => {
 app.get("/flights", (req, res) => {
   Flight.find({}, (error, allFlights) => {
     res.render("Index", { flights: allFlights });
+    //res.render method is called to render the Index view template, passing allFlights as a variable names flights to the view. 
+    //the {flights: allFlights} is passing down the prop named flights to the "Index" view template with value of allFlight Variable. Within Index view template, flight variable will be available that contains the array of flight objects retrieved from the database 
   });
 });
 
